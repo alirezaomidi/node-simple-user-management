@@ -12,6 +12,14 @@ npm install
 
 ## Run
 
+Start `mongodb` on your system. for example:
+```bash
+systemctl start mongodb     # Arch
+sudo service mongodb start  # Debian/Ubuntu
+```
+
+Then start the server:
+
 ```bash
 node bin/www
 ```

@@ -2,10 +2,22 @@ extends layout
 
 block content
   .container
-    if (!user)
-      a(href="/login") Login
-      br
-      a(href="/register") Register
-    if (user)
-      p You are currently logged in as #{user.username}
-      a(href="/logout") Logout
+  if (!user)
+    a(href="/login") Login
+    br
+    a(href='/register') Register
+
+  if (user)
+    a(href='/admin') Admin
+    br
+    a(href='/admins-only') A Secret Zone!
+    br
+    a(href="/logout") Logout
+    br
+    br
+
+    h3 Profile:
+    p Username: #{user.username}
+    p Full Name: #{user.fullname}
+    p Roles: #{user.roles}
+

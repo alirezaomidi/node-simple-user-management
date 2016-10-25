@@ -2,17 +2,14 @@ extends layout
 
 block content
   .container
-    h1 Login Page
-    p.lead Say something worthwhile here.
-    br
-    form(role='form', action="/login",method="post", style='max-width: 300px;')
+    h1 Login
+    form(role='form', action='/login', method='post')
       .form-group
-        input.form-control(type='text', name="username", placeholder='Enter Username')
+        input.form-control(type='text', name='username', placeholder='Username')
       .form-group
-        input.form-control(type='password', name="password", placeholder='Password')
+        input.form-control(type='password', name='password', placeholder='Password')
       button.btn.btn-default(type='submit') Submit
-  a(href='/')
-    button.btn.btn-primary(type="button") Cancel
-br
-if (message.length > 0)
+      a(href='/')
+        button.btn.btn-primary(type='button') Cancel
+
   p= message

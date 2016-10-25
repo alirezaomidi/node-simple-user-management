@@ -2,16 +2,14 @@ extends layout
 
 block content
   .container
-    h1 Register Page
-    p.lead Say something worthwhile here.
-    br
-    form(role='form', action="/register",method="post", style='max-width: 300px;')
+    h1 Register
+    form(role='form', action='/register', method='post')
       .form-group
-        input.form-control(type='text', name="username", placeholder='Enter Username')
-      .form-group
-        input.form-control(type='password', name="password", placeholder='Password')
+      input.form-control(type='text', name='username', placeholder='Username').form-group
+      input.form-control(type='password', name='password', placeholder='Password').form-group
+      input.form-control(type='text', name='fullname', placeholder='Full Name').form-group
       button.btn.btn-default(type='submit') Submit
-  a(href='/')
-    button.btn.btn-primary(type="button") Cancel
-br
-h4= info
+      a(href='/')
+        button.btn.btn-primary(type='button') Cancel
+
+  h4= info

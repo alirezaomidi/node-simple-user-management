@@ -9,6 +9,8 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
+var mongooseadmin = require('mongooseadmin');
+var role = require('./routes/role.js');
 
 var routes = require('./routes/index');
 
@@ -34,8 +36,8 @@ app.use(flash());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use('/', routes);
+app.use('/admin', role.requireRole('admin'), mongooseadmin());
 
 // passport config
 var Account = require('./models/account');
